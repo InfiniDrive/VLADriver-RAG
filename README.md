@@ -27,7 +27,7 @@
 
 ## Visualization
 <p align="center">
-  <img src="assets/experiment1.png" width="80%">
+  <img src="assets/vis1.png" width="80%">
 </p>
 ---
 
