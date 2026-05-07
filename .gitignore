@@ -1,0 +1,54 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+conda-meta/
+
+# IDE files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+
+# Logs
+logs/
+*.log
+wandb/
+
+# Datasets
+dataset/
+datasets/
+data/
+
+# Outputs
+output/
+outputs/
+results/
+cache/
+
+# Model checkpoints and large files
+checkpoints/
+weights/
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.pkl
+*.npz
+*.npy
+
+# Compressed files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
