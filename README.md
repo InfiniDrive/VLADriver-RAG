@@ -23,7 +23,7 @@
 
 ## Visualization
 <p align="center">
-  <img src="assets/vis1.png" width="80%">
+  <img src="docs/assets/vis1.png" width="80%">
 </p>
             In challenging corner-case driving scenarios, the baseline often produces unstable or unsafe planning results,
             whereas <b>VLADriver-RAG (b)</b> is able to generate a safer and more reliable trajectory. These qualitative results
