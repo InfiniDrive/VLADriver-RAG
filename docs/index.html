@@ -120,14 +120,60 @@
       border-radius: 8px;
     }
 
-    .architecture-img {
-        display: block;
-        width: 50%;
-        max-width: 1050px;
-        margin: 24px auto;
-        border-radius: 8px;
+    .architecture-layout {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    margin: 24px auto;
     }
 
+    .architecture-left {
+    flex: 1.15;
+    }
+
+    .architecture-right {
+    flex: 0.85;
+    font-size: 18px;
+    text-align: justify;
+    }
+
+    .architecture-right p {
+    margin-bottom: 16px;
+    }
+
+    .architecture-img {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+    .architecture-layout {
+        flex-direction: column;
+    }
+
+    .architecture-right {
+        font-size: 16px;
+    }
+    }
+
+    .result-table-img {
+        display: block;
+        width: 90%;
+        max-width: 980px;
+        margin: 20px auto 24px;
+        border-radius: 6px;
+    }
+
+    .result-vis-img {
+        display: block;
+        width: 90%;
+        max-width: 980px;
+        margin: 20px auto 16px;
+        border-radius: 6px;
+    }
     .caption {
       text-align: center;
       color: #57606a;
@@ -220,23 +266,24 @@
 
     <!-- ===================== Title ===================== -->
     <div class="title">
-      VLADriver-RAG:
-    </div>
-
-    <div class="subtitle">
-      Retrieval-Augmented Vision-Language-Action Models for Autonomous Driving
+      VLADriver-RAG:Retrieval-Augmented Vision-Language-Action Models for Autonomous Driving
     </div>
 
     <div class="authors">
-      Author Name<sup>1</sup>, Author Name<sup>2</sup>, Author Name<sup>1</sup>
+      Rui Zhao<sup>1,2</sup>, Haofeng Hu<sup>1,2</sup>, Zhenhai Gao<sup>1,2</sup>, Jiaqiao Liu<sup>3</sup> and Gao Fei<sup>1,2</sup>
     </div>
-
+    
+    <div class="affiliations">
+    <sup>1</sup>College of Automotive Engineering, Jilin University, Changchun 130025, China,
+    <sup>2</sup>The National Key Laboratory of Automotive Chassis Integration and Bionics, Jilin University, Changchun 130025, China, 
+    <sup>3</sup>Hangzhou ReeFocus AI Technology Co., Ltd.    
+    </div>
     <!-- ===================== Buttons ===================== -->
     <div class="button-row">
-      <a href="#">📄 arXiv</a>
-      <a href="#">💻 Code</a>
+      <a href="https://arxiv.org/abs/2605.08133">📄 arXiv</a>
+      <!-- <a href="#">💻 Code</a>
       <a href="#">📦 Dataset</a>
-      <a href="#">⬇️ Checkpoints</a>
+      <a href="#">⬇️ Checkpoints</a> -->
     </div>
 
     <!-- ===================== Overview ===================== -->
@@ -266,137 +313,92 @@
     <section id="architecture">
       <h2><span class="section-icon">🏗️</span>Architecture</h2>
 
+<div class="architecture-layout">
+    <div class="architecture-left">
       <img class="architecture-img" src="../assets/model.png" alt="VLADriver-RAG Architecture">
+    </div>
 
-      <div class="caption">
-        Architecture of VLADriver-RAG, including Visual-to-Scenario abstraction,
-        Scenario-Aligned Embedding, retrieval augmentation, and query-based VLA planning.
-      </div>
+    <div class="architecture-right">
+      <p>
+        <b>VLADriver-RAG</b> is built upon a retrieval-augmented Vision-Language-Action architecture
+        that integrates real-time visual perception with structure-aware historical driving priors.
+      </p>
+
+      <p>
+        The framework first converts raw visual observations into semantic scenario representations
+        through a <b>Visual-to-Scenario</b> mechanism. These structured representations are used to query
+        a scenario primitive database and retrieve topologically aligned historical cases.
+      </p>
+
+      <p>
+        The retrieved context is then projected into the VLA backbone together with visual tokens,
+        target points, and ego-state information. Finally, path queries and speed queries are decoded
+        into disentangled trajectory and velocity planning outputs.
+      </p>
+    </div>
+  </div>
+
+  <div class="caption">
+    Architecture of VLADriver-RAG, including Visual-to-Scenario abstraction,
+    Scenario-Aligned Embedding, retrieval augmentation, and query-based VLA planning.
+  </div>
     </section>
 
     <!-- ===================== Quantitative Results ===================== -->
     <section id="quantitative-results">
       <h2><span class="section-icon">📊</span>Quantitative Results</h2>
 
-      <p class="result-text">
-        We evaluate VLADriver-RAG on the Bench2Drive closed-loop benchmark.
-        The model achieves strong driving performance by combining real-time visual perception with
-        retrieved topologically aligned historical driving priors.
-      </p>
+        <p class="result-text">
+            We evaluate VLADriver-RAG on the Bench2Drive benchmark and further analyze the effects of
+            retrieval design, graph priors, training strategy, and database scale. In addition to quantitative
+            comparisons, we also provide qualitative visualizations to illustrate the practical advantages of
+            retrieval-augmented planning in challenging driving scenarios.
+        </p>
 
-      <h3>Closed-loop Results on Bench2Drive</h3>
+        <img class="result-table-img" src="../assets/table1.png" alt="Closed-loop Results on Bench2Drive">
+        <div class="caption">
+            Comparison of closed-loop driving performance on the Bench2Drive benchmark.
+        </div>
 
-      <img class="figure-wide" src="../assets/table1.png" alt="">
+        <img class="result-table-img" src="../assets/table2.png" alt="Ablation Study on Retrieval and Embedding Design">
+        <div class="caption">
+            Ablation results on retrieval strategy and embedding design.
+        </div>
 
-      <h3>Ablation Study on Retrieval and Embedding Design</h3>
+        <img class="result-table-img" src="../assets/table3.png" alt="Ablation Study on Graph Prior and Training Strategy">
+        <div class="caption">
+            Ablation results on graph prior modeling and training strategy.
+        </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Setting</th>
-            <th>GBR</th>
-            <th>VSR</th>
-            <th>Emb-Rec</th>
-            <th>Emb-Full</th>
-            <th>DS ↑</th>
-            <th>SR ↑</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>w/o Retrieval</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>85.14</td>
-            <td>66.56</td>
-          </tr>
-          <tr>
-            <td>Visual-Similarity Retrieval</td>
-            <td>-</td>
-            <td>✓</td>
-            <td>-</td>
-            <td>✓</td>
-            <td>86.65</td>
-            <td>67.21</td>
-          </tr>
-          <tr>
-            <td>Graph-Based Retrieval + Emb-Rec</td>
-            <td>✓</td>
-            <td>-</td>
-            <td>✓</td>
-            <td>-</td>
-            <td>88.92</td>
-            <td>69.10</td>
-          </tr>
-          <tr>
-            <td><b>Graph-Based Retrieval + Emb-Full</b></td>
-            <td>✓</td>
-            <td>-</td>
-            <td>-</td>
-            <td>✓</td>
-            <td class="best">89.12</td>
-            <td class="best">70.42</td>
-          </tr>
-        </tbody>
-      </table>
+        <img class="result-vis-img" src="../assets/vis1.png" alt="Qualitative visualization of corner-case driving scenarios">
+        <p class="result-text">
+            In challenging corner-case driving scenarios, the baseline often produces unstable or unsafe planning results,
+            whereas <b>VLADriver-RAG</b> is able to generate a safer and more reliable trajectory. These qualitative results
+            demonstrate that retrieved historical knowledge effectively improves planning robustness and decision stability
+            under uncertain environments.
+        </p>
 
-      <h3>Ablation Study on Graph Prior and Training Strategy</h3>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Graph Prior</th>
-            <th>DS ↑</th>
-            <th>SR ↑</th>
-            <th>Training Strategy</th>
-            <th>DS ↑</th>
-            <th>SR ↑</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>w/o G<sup>p</sup><sub>t</sub></td>
-            <td>88.23</td>
-            <td>69.00</td>
-            <td>Two-stage</td>
-            <td>86.76</td>
-            <td>66.95</td>
-          </tr>
-          <tr>
-            <td><b>with G<sup>p</sup><sub>t</sub></b></td>
-            <td class="best">89.12</td>
-            <td class="best">70.42</td>
-            <td><b>Three-stage</b></td>
-            <td class="best">89.12</td>
-            <td class="best">70.42</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p class="result-text">
-        The results show that graph-based retrieval provides more reliable historical priors than direct visual similarity retrieval.
-        Moreover, metric-aligned embedding optimization and the three-stage training strategy both contribute to improved
-        closed-loop driving performance.
-      </p>
-
-      <img class="figure-wide" src="../assets/results.png" alt="Quantitative Results">
-
-      <div class="caption">
-        Additional quantitative and qualitative results.
-      </div>
+        <img class="result-vis-img" src="../assets/vis2.png" alt="Impact of database scale on driving performance and retrieval latency">
+        <p class="result-text">
+            Expanding the retrieval database generally leads to better driving performance by providing a richer pool of
+            historical priors. However, this improvement also introduces higher retrieval latency. The results therefore
+            reveal a clear trade-off between planning quality and retrieval efficiency, suggesting that the database size
+            should be selected to balance driving score and inference speed in practical deployment.
+        </p>
     </section>
 
     <!-- ===================== Citation ===================== -->
     <section id="citation">
       <h2><span class="section-icon">📚</span>Citation</h2>
 
-      <pre><code>@article{vladriver_rag,
-  title   = {VLADriver-RAG: Retrieval-Augmented Vision-Language-Action Models for Autonomous Driving},
-  author  = {Author Name and Author Name and Author Name},
-  journal = {IEEE Transactions on Industrial Informatics},
-  year    = {2026}
+      <pre><code>@misc{zhao2026vladriverragretrievalaugmentedvisionlanguageactionmodels,
+      title={VLADriver-RAG: Retrieval-Augmented Vision-Language-Action Models for Autonomous Driving}, 
+      author={Rui Zhao and Haofeng Hu and Zhenhai Gao and Jiaqiao Liu and Gao Fei},
+      year={2026},
+      eprint={2605.08133},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2605.08133}, 
 }</code></pre>
     </section>
 

@@ -5,10 +5,8 @@
 </p>
 
 <p align="center">
-  <a href="#">arXiv</a> •
-  <a href="#">Model</a> •
-  <a href="#">Dataset</a> •
-  <a href="#">Checkpoint</a>
+  <a href="https://infinidrive.github.io/VLADriver-RAG/">Demo</a> •
+  <a href="https://arxiv.org/abs/2605.08133">arXiv</a> •
 </p>
 
 <p align="center">
@@ -17,10 +15,8 @@
 
 ## News
 
-- **[2026/xx/xx]** 🌐 Project page is live: [demo](#).
-- **[2026/xx/xx]** 🚀 Released VLADriver-RAG Bench2Drive weights and inference code.
-- **[2026/xx/xx]** 👉 We released our paper on [arXiv](#).
-- **[2026/xx/xx]** 🎉🎉🎉 Accepted by IEEE Transactions on Industrial Informatics.
+- **[2026/05/07]** 🌐 Project page is live: [demo](https://infinidrive.github.io/VLADriver-RAG/).
+- **[2026/05/12]** 👉 We released our paper on [arXiv](https://arxiv.org/abs/2605.08133).
 
 ---
 
@@ -29,38 +25,11 @@
 <p align="center">
   <img src="assets/vis1.png" width="80%">
 </p>
----
-
-## Setup
-
-<!-- TODO: Add environment setup and installation instructions here. -->
- <p>
- Coming soon
- </p>
 
 ---
 
-## Datasets Download
+## Quick start
 
-<!-- TODO: Add dataset download and preparation instructions here. -->
- <p>
- Coming soon
- </p>
-
----
-
-## Training
-
-<!-- TODO: Add training instructions here. -->
- <p>
- Coming soon
- </p>
-
----
-
-## Evaluation
-
-<!-- TODO: Add evaluation instructions here. -->
  <p>
  Coming soon
  </p>
@@ -68,5 +37,14 @@
 ---
 
 ## Citation
-
-<!-- TODO: Add BibTeX citation here. -->
+```bibtex
+@misc{zhao2026vladriverragretrievalaugmentedvisionlanguageactionmodels,
+      title={VLADriver-RAG: Retrieval-Augmented Vision-Language-Action Models for Autonomous Driving}, 
+      author={Rui Zhao and Haofeng Hu and Zhenhai Gao and Jiaqiao Liu and Gao Fei},
+      year={2026},
+      eprint={2605.08133},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2605.08133}, 
+}
+```
