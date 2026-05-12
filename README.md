@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://infinidrive.github.io/VLADriver-RAG/">Demo</a> •
+  <a href="https://infinidrive.github.io/VLADriver-RAG/">Project Page</a> •
   <a href="https://arxiv.org/abs/2605.08133">arXiv</a> •
 </p>
 
@@ -15,7 +15,7 @@
 
 ## News
 
-- **[2026/05/07]** 🌐 Project page is live: [demo](https://infinidrive.github.io/VLADriver-RAG/).
+- **[2026/05/07]** 🌐 Project page is live: [Project](https://infinidrive.github.io/VLADriver-RAG/).
 - **[2026/05/12]** 👉 We released our paper on [arXiv](https://arxiv.org/abs/2605.08133).
 
 ---
